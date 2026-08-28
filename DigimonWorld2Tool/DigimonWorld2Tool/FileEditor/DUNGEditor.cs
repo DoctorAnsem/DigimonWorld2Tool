@@ -356,6 +356,7 @@ namespace DigimonWorld2Tool.FileEditor
                 byte[] trapLevelData = BitConverter.GetBytes(trapLevel);
                 int trapLevelPointer = LoadedDUNGData.DungFloorHeaders[FloorIndex].DomainFloorBasePointer + (int)DungFloorHeader.DomainDataHeaderOffset.TrapLevel;
                 Array.Copy(trapLevelData, 0, LoadedDUNGData.RawFileData, trapLevelPointer, trapLevelData.Length);
+                LoadedDUNGData.DungFloorHeaders[FloorIndex].TrapLevel = trapLevel;
                 #endregion
 
             }
